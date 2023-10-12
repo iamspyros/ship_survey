@@ -1,0 +1,82 @@
+{
+    "id": "123",
+    "type": "navigable",
+    "steps": [
+        {
+            "stepIdentifier": { "id": "1" },
+            "type": "intro",
+            "title": "Welcome to the Ship Survey",
+            "text": "Please answer the following questions to the best of your ability."
+        },
+
+        {
+            "stepIdentifier": { "id": "7" },
+            "type": "question",
+            "title": "On a scale of 1 to 5, how would you rate the overall condition of the ship's safety equipment?",
+            "answerFormat": {
+                "type": "scale",
+                "maximumValue": 5,
+                "minimumValue": 1,
+                "defaultValue": 1,
+                "step": 1,
+                "minimumValueDescription": "1",
+                "maximumValueDescription": "5"
+            }
+        },
+        {
+            "stepIdentifier": { "id": "8" },
+            "type": "question",
+            "title": "On a scale of 1 to 5, how would you rate the overall condition of the ship's navigation equipment?",
+            "answerFormat": {
+                "type": "scale",
+                "maximumValue": 5,
+                "minimumValue": 1,
+                "defaultValue": 1,
+                "step": 1,
+                "minimumValueDescription": "1",
+                "maximumValueDescription": "5"
+            }
+        },
+        {
+            "stepIdentifier": { "id": "9" },
+            "type": "question",
+            "title": "On a scale of 1 to 5, how would you rate the overall condition of the ship's accommodation spaces?",
+            "answerFormat": {
+                "type": "scale",
+                "maximumValue": 5,
+                "minimumValue": 1,
+                "defaultValue": 1,
+                "step": 1,
+                "minimumValueDescription": "1",
+                "maximumValueDescription": "5"
+            }
+        },
+        {
+            "stepIdentifier": { "id": "10" },
+            "type": "question",
+            "title": "What is the primary communication system used on board the ship?",
+            "answerFormat": {
+                "type": "single",
+                "textChoices": [
+                    { "text": "VHF", "value": "VHF" },
+                    { "text": "MF/HF", "value": "MF/HF" },
+                    { "text": "Inmarsat", "value": "Inmarsat" },
+                    { "text": "Other", "value": "Other" }
+                ]
+            }
+        },
+        {
+            "stepIdentifier": { "id": "11" },
+            "type": "question",
+            "title": "What type of fire-fighting system is installed on board the ship?",
+            "answerFormat": {
+                "type": "multiple",
+                "textChoices": [
+                    { "text": "CO2", "value": "CO2" },
+                    { "text": "Foam", "value": "Foam" },
+                    { "text": "Other", "value": "Other" }
+                ]
+            }
+        }
+    ]
+}

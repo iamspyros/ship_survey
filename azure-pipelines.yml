@@ -1,0 +1,51 @@
+# Define variables
+variables:
+  projectDirectory: 'C:\Users\Spyros\Desktop\ship_survey'
+
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    exclude:
+      - build/**
+
+# Define the pipeline
+jobs:
+  - job: Build_Android
+    pool:
+      name: Default
+    steps:
+      # Checkout the code
+      - checkout: self
+      
+            # Pull the latest changes from GitHub
+      - script: |
+          cd $(projectDirectory)
+          git pull
+        displayName: 'Git Pull'
+
+      # Build the APK
+      - script: |
+          cd $(projectDirectory)
+          flutter build apk
+        displayName: 'Build APK'
+      
+      # Add the APK to Git
+      - script: |
+          cd $(projectDirectory)
+          git add .
+        displayName: 'Git Add'
+      
+      # Commit the changes
+      - script: |
+          cd $(projectDirectory)
+          git commit -m "new version"
+        displayName: 'Git Commit'
+      
+      
+      # Push the changes to GitHub
+      - script: |
+          cd $(projectDirectory)
+          git push
+        displayName: 'Git Push'
